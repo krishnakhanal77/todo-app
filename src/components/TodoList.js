@@ -87,7 +87,7 @@ function TodoList() {
                     onClick={() => completeTodo(item.id)}
                     type="checkbox"
                   />
-                  <form>
+                  {/* <form>
                     <input
                       className={` bg-gray-300 ml-3 cursor-pointer ${
                         item.isComplete === true ? "line-through" : ""
@@ -96,15 +96,15 @@ function TodoList() {
                       value={item.text}
                       onChange={(e) => setEdit(e.target.value)}
                     />
-                  </form>
+                  </form> */}
 
-                  {/* <p
+                  <p
                     className={`ml-3 cursor-pointer ${
                       item.isComplete === true ? "line-through" : ""
                     }`}
                   >
                     {item.text}
-                  </p> */}
+                  </p>
                 </div>
 
                 <div className="flex cursor-pointer">
