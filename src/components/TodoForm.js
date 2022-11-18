@@ -8,7 +8,7 @@ const TodoForm = ({ onSubmit, edit, error }) => {
     e.preventDefault();
     // console.log(input);
     onSubmit({
-      id: Math.floor(Math.random() * 1000),
+      id: Date.now(),
       text: todoTitle,
     });
 

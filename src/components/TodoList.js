@@ -33,25 +33,12 @@ function TodoList() {
     setTodos(removedArr);
   };
 
-  // const completeTodo = (id) => {
-  //   let updatedTodos = todos.map((todo) => {
-  //     if (todo.id === id) {
-  //       todo.isComplete = !todo.isComplete;
-  //     }
-  //     //  console.log(todo);
-  //     return todo;
-  //   });
-  //   setTodos(updatedTodos);
-  // };
-  const completeTodo = (id) => {
-    let updatedTodos = todos.map((todo) => {
-      if (todo.id === id) {
-        todo.isComplete = !todo.isComplete;
-      }
-      //  console.log(todo);
-      return todo;
-    });
-    setTodos(updatedTodos);
+  const completeTodo = (i) => {
+    const newTodos = todos.map((todo) => ({
+      ...todo,
+      isCompleted: todo.id === i ? !todo.isCompleted : todo.isCompleted,
+    }));
+    setTodos(newTodos);
   };
 
   const submitUpdate = (value) => {
@@ -87,20 +74,9 @@ function TodoList() {
                     onClick={() => completeTodo(item.id)}
                     type="checkbox"
                   />
-                  {/* <form>
-                    <input
-                      className={` bg-gray-300 ml-3 cursor-pointer ${
-                        item.isComplete === true ? "line-through" : ""
-                      }`}
-                      type="text"
-                      value={item.text}
-                      onChange={(e) => setEdit(e.target.value)}
-                    />
-                  </form> */}
-
                   <p
                     className={`ml-3 cursor-pointer ${
-                      item.isComplete === true ? "line-through" : ""
+                      item.isCompleted === true ? "line-through" : ""
                     }`}
                   >
                     {item.text}
